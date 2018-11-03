@@ -1,0 +1,52 @@
+package com.qa.selenium;
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class XPathDecendentConcept {
+//WebDriver driver;
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\Driver\\chromedriver.exe");
+		
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("https://www.google.com/");
+		driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		
+		driver.findElement(By.xpath("//input[@title='Search']")).sendKeys("java");;
+		
+		List<WebElement> list= driver.findElements(By.xpath("//ul[@role='listbox']//li/descendant::div[@class='sbqs_c']"));
+		System.out.println("Print the list size "+list.size());
+		for(int i=0; i<= list.size(); i++) {
+			String title= null;
+			title= list.get(i).getText();
+			System.out.println(title);
+			try {
+			if (list.get(i).getText().contains("javapoint")) {
+				System.out.println("print the title:"+title);
+				list.get(i).click();
+				break;
+			}
+			}catch (IndexOutOfBoundsException e) {
+				System.out.println("item not found");
+			}
+			
+			
+		}
+		
+		driver.quit();
+		
+		
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package TestSCM;
+
+import java.util.Scanner;
+
+public class ReverseStrings {
+	
+	public static String Reverse() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the String:");
+		String input = "";
+		while(input.length()<=0){
+			System.out.println("Please re- enter the string:");
+			input= scan.nextLine();
+			}
+				
+		String[] words= input.split(" ");
+		for (String item: words) { //This,is, Sujay
+			 input = item+" "+input; // This, is This, Sujay is This
+						}
+		
+		return input.trim();
+			}
+		
+		
+		
+	}
+
+

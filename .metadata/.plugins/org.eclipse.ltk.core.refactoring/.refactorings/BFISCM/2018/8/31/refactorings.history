@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;ConfigurePage.java&apos; to &apos;SCM/src/test/java/com.brainware.qa.testcases&apos;&#x0D;&#x0A;- Original project: &apos;BFISCM&apos;&#x0D;&#x0A;- Destination element: &apos;SCM/src/test/java/com.brainware.qa.testcases&apos;&#x0D;&#x0A;- Original element: &apos;com.brainware.qa.pages.ConfigurePage.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=SCM/src\/test\/java&lt;com.brainware.qa.testcases" element1="/src\/main\/java&lt;com.brainware.qa.pages{ConfigurePage.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1533286249624" units="1" version="1.0"/>
+</session>

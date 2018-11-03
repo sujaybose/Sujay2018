@@ -1,0 +1,93 @@
+package com.brainware.qa.pages;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.brainware.qa.base.TestBase;
+import com.brainware.qa.util.PopUpHandle;
+
+import junit.framework.Assert;
+
+public class AmountSettings extends TestBase {
+
+	// Page Factory - OR:
+	@FindBy(id = "ctl00_MainContentSection_SettingsViewt1")
+	WebElement amountSettings;
+
+	@FindBy(id = "ctl00_MainContentSection_TextDisplay")
+	WebElement amountPage;
+
+	// amount fields items
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtFormat")
+	WebElement format;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtIgnoreCharacters")
+	WebElement ignoreChar;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTchkDeactivateCrossValidation")
+	WebElement crossVal;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtExportThousandSeparator")
+	WebElement thouSep;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtExportDecimalSeparator")
+	WebElement decSep;
+
+	@FindBy(id = "ctl00_MainContentSection_Save")
+	WebElement saveBtn;
+
+	// Initializing the Page Objects:
+	public AmountSettings() {
+		PageFactory.initElements(driver, this);
+	}
+
+	public boolean verifyAmountPage() {
+		// driver.switchTo().frame(amountPage);
+		return amountPage.isDisplayed();
+	}
+
+	// WebElement format, WebElement ignoreChars, WebElement crossVal, WebElement
+	// thouSep, WebElement decSep
+	public void setAmountFields(String valFromat, String valIgnoreChar, String valThouSep, String valDecSep)
+			throws InterruptedException, WebDriverException {
+		// clear the fields then fill up
+
+		format.clear();
+		format.sendKeys(valFromat);
+		ignoreChar.clear();
+		ignoreChar.sendKeys(valIgnoreChar);
+		crossVal.click();
+		thouSep.clear();
+		thouSep.sendKeys(valThouSep);
+		decSep.clear();
+		decSep.sendKeys(valDecSep);
+		Thread.sleep(3000);
+		saveBtn.submit();
+
+		// popup.click();
+		/*
+		 * PopUpHandle ph= new PopUpHandle(); ph.selectPopUpHandle();
+		 */
+		if (driver.findElement(By.xpath("//input[@id='rdblPacketSelection_1']")).isDisplayed()) {
+			driver.findElement(By.xpath("//input[@id='rdblPacketSelection_1']")).click();
+			System.out.println("packet selected");
+			driver.findElement(By.xpath("//input[@id='grdExtPackets_ctl02_rdbSelectPacket']")).click();
+			System.out.println("packet choosed");
+			driver.findElement(By.xpath("//button[@class='form_button' and span='Save']")).click();
+			String str = driver.findElement(By.cssSelector("#dialog-alert p")).getText();
+			System.out.println(str);
+			Assert.assertEquals("Records saved successfully", str);
+			driver.findElement(By.xpath("//button[@class='form_button' and span='Close']")).click();
+		} else {
+			driver.findElement(By.xpath("//button[@class='form_button' and span='Close']")).click();
+
+		}
+
+	}
+}

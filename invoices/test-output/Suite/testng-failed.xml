@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="testSCM(failed)">
+    <classes>
+      <class name="com.brainware.invoices.FirstPage">
+        <methods>
+          <include name="testSCM"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.brainware.invoices.FirstPage -->
+    </classes>
+  </test> <!-- testSCM(failed) -->
+</suite> <!-- Failed suite [Suite] -->

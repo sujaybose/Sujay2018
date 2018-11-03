@@ -1,0 +1,134 @@
+package com.brainware.qa.pages;
+
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.brainware.qa.base.TestBase;
+import com.brainware.qa.util.PopUpHandle;
+import com.brainware.qa.util.Xls_Reader;
+
+public class AmountSettings extends TestBase {
+
+	// Page Factory - OR:
+	@FindBy(id = "ctl00_MainContentSection_SettingsViewt1")
+	WebElement amountSettings;
+
+	@FindBy(id = "ctl00_MainContentSection_TextDisplay")
+	WebElement amountPage;
+
+	// amount fields items
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtFormat")
+	WebElement format;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtIgnoreCharacters")
+	WebElement ignoreChar;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTchkDeactivateCrossValidation")
+	WebElement crossVal;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtExportThousandSeparator")
+	WebElement thouSep;
+
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtExportDecimalSeparator")
+	WebElement decSep;
+
+	@FindBy(id = "ctl00_MainContentSection_Save")
+	WebElement saveBtn;
+
+	// Initializing the Page Objects:
+	public AmountSettings() {
+		PageFactory.initElements(driver, this);
+	}
+
+	public boolean verifyAmountPage() {
+		// driver.switchTo().frame(amountPage);
+		return amountPage.isDisplayed();
+	}
+
+public void readData() {
+	
+	Xls_Reader reader = new Xls_Reader(
+			"C:\\eclipse\\workspace\\BFISCM\\src\\main\\java\\com\\brainware\\qa\\testdata\\BFI_Config.xlsx");
+
+	int rowCount = reader.getRowCount("BRWAMT");
+	int colCount= reader.getColumnCount("BRWAMT");
+
+	for(int colNum = 1;colNum<=colCount;colNum++)
+	{
+		String filename=reader.getCellData("BRWAMT", colNum, 2);
+		
+		System.out.println("Print values:"+ colCount );
+	}
+}
+
+	// WebElement format, WebElement ignoreChars, WebElement crossVal, WebElement
+	// thouSep, WebElement decSep
+	public void setAmountFields()
+			throws InterruptedException, WebDriverException {
+		
+		Xls_Reader reader = new Xls_Reader(
+				"C:\\eclipse\\workspace\\BFISCM\\src\\main\\java\\com\\brainware\\qa\\testdata\\BFI_Config.xlsx");
+
+		int rowCount = reader.getRowCount("BRWAMT");
+		System.out.println("rowcount:" + rowCount);
+		int colCount = reader.getColumnCount("BRWAMT");
+		System.out.println("colcount:" + colCount);
+
+		// for (int colNum = 1; colNum <= colCount; colNum++) 
+		String Format = reader.getCellData("BRWAMT", "Format", 2);
+		String IgnoreCharacters = reader.getCellData("BRWAMT", "IgnoreCharacters", 2);
+		String ExportThousandSeparator = reader.getCellData("BRWAMT", "ExportThousandSeparator", 2);
+		String ExportDecimalSeparator = reader.getCellData("BRWAMT", "ExportDecimalSeparator", 2);
+		
+		// clear the fields then fill up
+
+		format.clear();
+		format.sendKeys(Format);
+		
+		ignoreChar.clear();
+		ignoreChar.sendKeys(IgnoreCharacters);
+		
+		crossVal.click();
+		
+		thouSep.clear();
+		thouSep.sendKeys(ExportThousandSeparator);
+		
+		decSep.clear();
+		decSep.sendKeys(ExportDecimalSeparator);
+		
+		saveBtn.click();
+
+		// popup.click();
+
+		PopUpHandle ph = new PopUpHandle();
+		ph.selectPopUpHandle();
+
+		// System.out.println("Print the value is true or false :
+		// "+driver.findElement(By.xpath("//input[@id='rdblPacketSelection_1']")).isDisplayed());
+
+		/*
+		 * System.out.println(
+		 * "***********************************************************************");
+		 * if (driver.findElement(By.xpath("//input[@id='rdblPacketSelection_1']")).
+		 * isDisplayed()) {
+		 * driver.findElement(By.xpath("//input[@id='rdblPacketSelection_1']")).click();
+		 * System.out.println("packet selected"); driver.findElement(By.xpath(
+		 * "//input[@id='grdExtPackets_ctl02_rdbSelectPacket']")).click();
+		 * System.out.println("packet choosed");
+		 * driver.findElement(By.xpath("//button[@class='form_button' and span='Save']")
+		 * ).click(); String str =
+		 * driver.findElement(By.cssSelector("#dialog-alert p")).getText();
+		 * System.out.println(str); Assert.assertEquals("Records saved successfully",
+		 * str);
+		 * driver.findElement(By.xpath("//button[@class='form_button' and span='Close']"
+		 * )).click(); } else {
+		 * driver.findElement(By.xpath("//button[@class='form_button' and span='Close']"
+		 * )).click();
+		 * 
+		 * }
+		 */
+
+	}
+}

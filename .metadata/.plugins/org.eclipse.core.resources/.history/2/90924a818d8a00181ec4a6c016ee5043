@@ -1,0 +1,56 @@
+package com.brainware.qa.util;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import org.testng.annotations.Test;
+
+public class ConnectSQL {
+	
+  
+	
+  @Test
+  public void conDB() throws ClassNotFoundException, SQLException {
+	  
+	  Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+	  System.out.println("SQL Driver loaded");
+	  
+	  //Connection connection = DriverManager.getConnection("jdbc:sqlserver://localhost:1433;\\SQLEXPRESS;databaseName=Tema6","sa","123456");
+	  //Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.208.218.58:1433","admin", "welcome$123");
+	  
+	  Connection conn = DriverManager.getConnection("jdbc:sqlserver://10.208.218.58:1433;databaseName=BFI_Config","admin","welcome$123");
+	  System.out.println("Data loaded");
+	  //Executing SQL query and fetching the result
+	  Statement st = conn.createStatement();
+	  String sqlStr = "select * from sys.Tables";
+	  ResultSet rs = st.executeQuery(sqlStr);
+	  System.out.println(rs);
+	  ArrayList<String> ar= new ArrayList<String>();
+	  ArrayList<Object> ar2= new ArrayList<Object>();
+	  
+	  while (rs.next()) {
+		  System.out.println(rs.getString("name"));
+		  ar.add(rs.getString("name"));
+		  String sqlStr1 = "select * from "+rs.getString("name");
+		  ResultSet rs1 = st.executeQuery(sqlStr1);
+		  ar2.add(rs1);
+		  System.out.println("ar2:"+ar2);
+		  		  
+		}	
+/*	  while (ar.iterator() != null) {
+		  //System.out.println(ar.get(0));
+		  String sqlStr2 = "select * from "+ar;
+		  ar2.add(rs.getString("name"));*/
+	  System.out.println(ar);
+	  
+	  //return ar;
+	  
+	
+
+	  
+	}
+  }

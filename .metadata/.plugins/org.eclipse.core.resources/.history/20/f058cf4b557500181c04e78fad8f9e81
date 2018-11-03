@@ -1,0 +1,17 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Suite" parallel="none">
+
+
+ <test name="testSCM">
+
+ <classes>
+
+ <class name="invoices.FirstPage" />
+
+ </classes>
+
+ </test>
+
+</suite>

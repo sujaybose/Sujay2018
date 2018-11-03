@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.qa.java.MultipleInheritence.java&apos; to &apos;Test.java&apos;&#x0D;&#x0A;- Original project: &apos;JavaLearning&apos;&#x0D;&#x0A;- Original element: &apos;com.qa.java.MultipleInheritence.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.qa.java.Test.java&apos;" description="Rename compilation unit &apos;MultipleInheritence.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.qa.java{MultipleInheritence.java" name="Test.java" references="false" stamp="1534398650018" version="1.0"/>
+</session>

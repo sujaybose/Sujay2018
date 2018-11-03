@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;invoices/src/test/java/com.brainware.invoices&apos;&#x0D;&#x0A;- Original project: &apos;TestSCM&apos;&#x0D;&#x0A;- Destination element: &apos;invoices/src/test/java/com.brainware.invoices&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     TestSCM.FirstPage.java&#x0D;&#x0A;     TestSCM.TestOptions.java&#x0D;&#x0A;     TestSCM.ConfigureProjectPageFactory.java" description="Copy compilation units" destination="=invoices/src\/test\/java&lt;com.brainware.invoices" element1="/src&lt;TestSCM{FirstPage.java" element2="/src&lt;TestSCM{TestOptions.java" element3="/src&lt;TestSCM{ConfigureProjectPageFactory.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1529326134603" units="3" version="1.0"/>
+</session>

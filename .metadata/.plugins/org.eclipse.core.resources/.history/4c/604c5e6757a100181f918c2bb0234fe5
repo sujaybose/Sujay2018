@@ -1,0 +1,55 @@
+package com.brainware.qa.testcases;
+
+import org.testng.annotations.Test;
+
+import com.brainware.qa.base.TestBase;
+import com.brainware.qa.pages.AmountSettings;
+import com.brainware.qa.pages.ConfigurePage;
+import com.brainware.qa.pages.LoginPage;
+import com.brainware.qa.pages.ProcessingSettings;
+import com.brainware.qa.util.TestUtil;
+
+import org.testng.annotations.BeforeTest;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+
+public class AmountSettingsTest extends TestBase {
+	ProcessingSettings proSet;
+	TestUtil testUtil;
+	LoginPage loginPage;
+	ConfigurePage configurePage;
+
+
+  @BeforeTest
+	public void setUp() throws InterruptedException {
+	  initialization();
+		testUtil = new TestUtil();
+		loginPage = new LoginPage();
+		configurePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
+		proSet = configurePage.selectProfileDropdown(prop.getProperty("project"), prop.getProperty("settings"), prop.getProperty("profile"));
+		//amountSet = configurePage.selectTable(configurePage);
+		//return configurePage;
+  }
+ 
+/*	@Test(priority = 1)
+	public void processingPageTest() throws InterruptedException {
+		proSet.selectTable();
+		
+	}*/
+
+	@Test(priority = 2)
+	public void ProcessingPageVerify() {
+		boolean flag = proSet.verifyProcessingPage();
+		Assert.assertTrue(flag);
+		
+	}
+	
+  @AfterTest
+	public void tearDown(){
+		driver.quit();
+	}
+
+}

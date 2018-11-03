@@ -1,0 +1,4 @@
+#Wed Oct 03 13:59:38 IST 2018
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=webdriverwait

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Complete TestSuite" duration-ms="82" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+    <groups>
+    </groups>
+    <test name="Application Test 1" duration-ms="33" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+      <class name="testclasses.RegressionTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="beforeTest" is-config="true" duration-ms="8" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="beforeClass" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="beforeMethod" is-config="true" duration-ms="1" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="f" duration-ms="5" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:testclasses.RegressionTest@d2cc05a]" name="afterTest" is-config="true" duration-ms="1" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- testclasses.RegressionTest -->
+    </test> <!-- Application Test 1 -->
+    <test name="Application Test 2" duration-ms="6" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+      <class name="testclasses.RegTest2">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:testclasses.RegTest2@523884b2]" name="beforeClass" is-config="true" duration-ms="1" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeClass -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:testclasses.RegTest2@523884b2]" name="beforeTest" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:testclasses.RegTest2@523884b2]" name="beforeMethod" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="f()[pri:0, instance:testclasses.RegTest2@523884b2]" name="f" duration-ms="2" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- f -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:testclasses.RegTest2@523884b2]" name="afterMethod" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:testclasses.RegTest2@523884b2]" name="afterClass" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:testclasses.RegTest2@523884b2]" name="afterTest" is-config="true" duration-ms="0" started-at="2018-06-11T11:48:31Z" finished-at="2018-06-11T11:48:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- testclasses.RegTest2 -->
+    </test> <!-- Application Test 2 -->
+  </suite> <!-- Complete TestSuite -->
+</testng-results>

@@ -1,0 +1,65 @@
+package com.brainware.qa.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.annotations.Test;
+
+import com.brainware.qa.base.TestBase;
+
+public class AmountSettings extends TestBase{
+	
+	// Page Factory - OR:
+	@FindBy(id = "ctl00_MainContentSection_SettingsViewt1")
+	WebElement amountSettings;
+	
+	@FindBy(id = "ctl00_MainContentSection_TextDisplay")
+	WebElement amountPage;
+
+	//amount fields items
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtFormat")
+	WebElement format;
+	
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtIgnoreCharacters")
+	WebElement ignoreChar;
+	
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTchkDeactivateCrossValidation")
+	WebElement crossVal;
+	
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtExportThousandSeparator")
+	WebElement thouSep;
+	
+	@FindBy(id = "ctl00_MainContentSection_BRWAMTtxtExportDecimalSeparator")
+	WebElement decSep;
+	
+	@FindBy(id = "ctl00_MainContentSection_Save")
+	WebElement saveBtn;
+	
+	
+	
+	
+	// Initializing the Page Objects:
+	public AmountSettings() {
+		PageFactory.initElements(driver, this);
+	}
+	
+	public boolean verifyAmountPage() {
+		//driver.switchTo().frame(amountPage);
+		return amountPage.isDisplayed();
+	}
+	
+
+	
+	//WebElement format, WebElement ignoreChars, WebElement crossVal, WebElement thouSep, WebElement decSep
+	public void setAmountFields(String valFromat, String valIgnoreChar, String valThouSep, String valDecSep ) {
+		format.sendKeys(valFromat);
+		ignoreChar.sendKeys(valIgnoreChar);
+		crossVal.click();
+		thouSep.sendKeys(valThouSep);
+		decSep.sendKeys(valDecSep);
+		saveBtn.click();	
+		
+		
+		
+	}
+}

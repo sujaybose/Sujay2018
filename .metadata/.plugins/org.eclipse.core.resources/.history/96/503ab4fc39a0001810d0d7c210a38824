@@ -1,0 +1,26 @@
+package com.qa.java;
+
+public class ConstructorConcept {
+	
+	String name= "bose";
+	int age= 63;
+
+	public ConstructorConcept() {
+	}
+	
+	public ConstructorConcept(String name, int age) {
+		//this.name=name;
+		//this.age=age;
+		
+		System.out.println(name);
+		System.out.println(age);
+	}
+
+	
+	public static void main(String[] args) {
+		ConstructorConcept con= new ConstructorConcept("sujay", 36);
+		System.err.println(con.name);
+		System.out.println(con.age);
+	}
+	
+}

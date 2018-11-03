@@ -1,0 +1,28 @@
+package TestSCM;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class ConfigureProjectPageFactory {
+	
+	@FindBy(xpath="//select[@name='ctl00$MainContentSection$ProjectList']")
+	WebElement Project;
+	
+	@FindBy(xpath="//select[@name='ctl00$MainContentSection$SettingsList']")
+	WebElement Settings;
+
+	@FindBy(id="//select[@id='ctl00_MainContentSection_ProfileList']")
+	WebElement Profile;
+	
+	public void selectProject() {
+		Project.s
+	}
+	
+	public void clickroundTrip() {
+		roundTrip.click();
+	}
+	
+	public void clickMultipleDestination() {
+		multipleDestination.click();
+	}
+}
